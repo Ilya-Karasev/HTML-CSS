@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Адаптивная таблица</title>
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Helvetica, sans-serif;
+            background-color: rgb(225, 225, 225);
+        }
+        th, td {
+            border: 1px solid rgb(200, 200, 200);
+            text-align: left;
+            padding: 10px;
+        }
+        tr:nth-child(even) {
+            background-color: rgb(240, 240, 240);
+        }
+        tr:nth-child(odd) {
+            background-color: rgb(255, 255, 255);
+        }
+        th {
+            background-color: rgb(50, 50, 50);
+            color: rgb(255, 255, 255);
+        }
+        td {
+            font-weight: bold;
+        }
+        table {
+            width: 90%;
+            max-width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+            margin: 0 auto;
+            margin-top: 5%;
+        }
+        @media (max-width: 500px) {
+            th {
+                display: none;
+            }
+            tr {
+                border: 1px solid rgb(200, 200, 200);
+                background-color: rgb(225, 225, 225);
+            }
+            td {
+                display: block;
+                font-weight: normal;
+            }
+            tr:nth-child(odd) {
+                background-color: rgb(255, 255, 255);
+            }
+            tr td:nth-child(1)::before {
+                content: "Имя ";
+            }
+            tr td:nth-child(2)::before {
+                content: "Фамилия ";
+            }
+            tr td:nth-child(3)::before {
+                content: "Должность ";
+            }
+            *::before {
+                margin-right: 10px;
+                font-weight: bold;
+            }
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Имя</th>
+            <th>Фамилия</th>
+            <th>Должность</th>
+        </tr>
+        <tr>
+            <td>James</td>
+            <td>Matman</td>
+            <td>Chief Sandwich Eater</td>
+        </tr>
+        <tr>
+            <td>James</td>
+            <td>Doe</td>
+            <td>Chief Sandwich Eater</td>
+        </tr>
+    </table>
+</body>
+</html>
